@@ -1,4 +1,4 @@
-# Byte-compiled - optimized - DLL files
+# Byte-compiled/ Optimized/ DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -38,3 +38,9 @@ celerybeat.pid
 
 # PID files for daemonization
 *.pid
+
+# images
+imgtopdf/in_source/*.jpg
+imgtopdf/out_edited/*.jpg
+imgtopdf/out_result/*.pdf
+
