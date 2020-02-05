@@ -14,6 +14,9 @@ from utils.base import BaseClass
 class CopyDir(BaseClass):
 
     def run(self, path_source, patch_destiny):
+        """
+            Copy image directory diference
+        """
 
         self.message.toprint('COPY_IMAGE')
 
