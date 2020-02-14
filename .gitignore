@@ -41,6 +41,7 @@ celerybeat.pid
 
 # images
 imgtopdf/in/*.jpg
+imgtopdf/in/*.png
 imgtopdf/out/edited/*.jpg
 imgtopdf/out/edited/*.png
 imgtopdf/out/result/*.pdf
