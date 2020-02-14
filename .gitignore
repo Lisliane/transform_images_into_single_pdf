@@ -1,0 +1,48 @@
+# Byte-compiled/ Optimized/ DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Translations
+*.mo
+*.pot
+
+# dotenv
+.env
+.env_bkp
+
+# virtualenv
+myenv/
+
+# celery
+celerybeat.pid
+
+# IDLE Visual Studio Code
+.vscode
+
+# db
+*.sqlite3
+
+# static media
+/static/
+
+# vagrant
+.vagrant/
+
+# logs daemonize
+*logs/
+*.log
+
+# exclude .diff
+*.diff
+
+# PID files for daemonization
+*.pid
+
+# images
+imgtopdf/in/*.jpg
+imgtopdf/in/*.png
+imgtopdf/out/edited/*.jpg
+imgtopdf/out/edited/*.png
+imgtopdf/out/result/*.pdf
+
