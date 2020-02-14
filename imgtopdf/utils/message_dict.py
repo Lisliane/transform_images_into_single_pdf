@@ -1,6 +1,7 @@
-"""
-    Dictionary messages
-"""
+""" Dictionary messages """
+
+# Authors: Lisliane Zanette de Oliveira <lislianezanetteoliveira@gmail.com>
+
 
 COPY_IMAGE = {
     'ENG': 'Copying image(s)...',
@@ -62,6 +63,16 @@ IMAGE_CONVERTED_BGR = {
     'PTB': '###### Imagem convertida para escala BGR.'
 }
 
+IMAGE_CONVERT_RGB = {
+    'ENG': '### Converting image to RGB...',
+    'PTB': '### Convertendo imagem para escala RGB...'
+}
+
+IMAGE_CONVERTED_RGB = {
+    'ENG': '###### Image converted to RGB.',
+    'PTB': '###### Imagem convertida para escala RGB.'
+}
+
 IMAGE_CROP = {
     'ENG': '### Croping image...',
     'PTB': '### Cortando imagem...'
@@ -90,4 +101,29 @@ IMAGE_APPLY_MSRCR = {
 IMAGE_APPLIED_MSRCR = {
     'ENG': '###### Image aplicated retinex MSRCR.',
     'PTB': '###### Imagem aplicada retinex MSRCR.'
+}
+
+IMAGE_CREATE_PDF = {
+    'ENG': '###### Adding image to PDF...',
+    'PTB': '###### Adicionando imagem ao PDF...'
+}
+
+IMAGE_CREATED_PDF = {
+    'ENG': '###### Image added to PDF - page {page}.',
+    'PTB': '###### Image adicionada ao PDF - página {page}.'
+}
+
+SAVE_PDF = {
+    'ENG': 'Saving file.',
+    'PTB': 'Salvando arquivo.'
+}
+
+SAVED_PDF = {
+    'ENG': 'File save.',
+    'PTB': 'Arquivo salvo.'
+}
+
+DONE = {
+    'ENG': 'Done.',
+    'PTB': 'Pronto.'
 }

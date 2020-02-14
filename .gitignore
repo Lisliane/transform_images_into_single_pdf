@@ -40,8 +40,9 @@ celerybeat.pid
 *.pid
 
 # images
-imgtopdf/in_source/*.jpg
-imgtopdf/out_edited/*.jpg
-imgtopdf/out_edited/*.png
-imgtopdf/out_result/*.pdf
+imgtopdf/in/*.jpg
+imgtopdf/in/*.png
+imgtopdf/out/edited/*.jpg
+imgtopdf/out/edited/*.png
+imgtopdf/out/result/*.pdf
 

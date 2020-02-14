@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
+# Authors: Lisliane Zanette de Oliveira <lislianezanetteoliveira@gmail.com>
+
 # Third-party imports
 import argparse
 
 # Own imports
-from process.process import Process
+from image_process import Process as ProcessImage
+from pdf_generate import Process as ProcessPDF
 
 
 def parse_args():
@@ -42,8 +45,13 @@ def main():
     lang = args.lang
     option = args.option
 
-    process = Process(language=lang)
-    process.run(option=option)
+    process_image = ProcessImage(language=lang)
+    process_pdf = ProcessPDF(language=lang)
+
+    if option == 1:
+        process_image.apply()
+
+    process_pdf.apply()
 
 
 if __name__ == '__main__':

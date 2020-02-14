@@ -1,6 +1,6 @@
-"""
-    Copies the original images to a working directory
-"""
+""" Copies the original images to a working directory"""
+
+# Authors: Lisliane Zanette de Oliveira <lislianezanetteoliveira@gmail.com>
 
 # Third-party imports
 import cv2
@@ -16,6 +16,9 @@ class CopyDir(BaseClass):
     def run(self, path_source, patch_destiny):
         """
             Copy image directory diference
+                where:
+                    - path_source: directory where the source images are
+                    - patch_destiny: directory where the destiny images are
         """
 
         self.message.toprint('COPY_IMAGE')
@@ -29,12 +32,15 @@ class CopyDir(BaseClass):
         else:
             self.message.toprint('DELETE_FILES_FROM_PATH', {'patch': patch_destiny})
             files = glob.glob('{0}/*'.format(patch_destiny))
-            for f in files:
-                os.remove(f)
+            for file in files:
+                if file.endswith(self.settings.EXTENSION_TO_OUTPUT):
+                    os.remove(file)
 
+        # Copy file to new destination
         for root, subdirectories, files in os.walk(path_source):
             for file in files:
-                image = cv2.imread(os.path.join(root, file))
-                cv2.imwrite(os.path.join(patch_destiny, file), image)
+                if file.endswith(self.settings.EXTENSION_TO_EDIT):
+                    image = cv2.imread(os.path.join(root, file))
+                    cv2.imwrite(os.path.join(patch_destiny, file), image)
 
         self.message.toprint('IMAGE_COPIED')

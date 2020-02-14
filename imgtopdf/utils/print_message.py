@@ -1,6 +1,6 @@
-"""
-    Print messages
-"""
+""" Print messages """
+
+# Authors: Lisliane Zanette de Oliveira <lislianezanetteoliveira@gmail.com>
 
 # Own imports
 from utils import message_dict
@@ -10,17 +10,17 @@ class Message():
 
     def __init__(self, language=None):
         """
-            Parameters:
-                - language:
+            - language: language of messages
         """
 
         self.language = language
 
     def toprint(self, message=None, values_dict={}):
         """
-            Parameters:
-                - message:
-                - values_dict:
+            Show message according to language.
+                where:
+                    - message: dictionary name of the message
+                    - values_dict: dictionary with values to show (if any)
         """
 
         if message is not None:

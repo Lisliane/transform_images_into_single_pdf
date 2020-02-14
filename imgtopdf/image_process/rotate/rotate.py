@@ -1,6 +1,6 @@
-"""
-    Rotate image
-"""
+""" Rotate image """
+
+# Authors: Lisliane Zanette de Oliveira <lislianezanetteoliveira@gmail.com>
 
 # Third-party imports
 import cv2
@@ -16,7 +16,12 @@ class Rotate(BaseClass):
 
     def apply(self, image):
         """
-            Rotate image
+            Rotate image.
+                where:
+                    - image: array of image
+
+                output:
+                    - image_out: array of image rotated
         """
 
         self.message.toprint('ROTATE_IMAGE')
@@ -25,12 +30,9 @@ class Rotate(BaseClass):
         # Median of the single channel pixel intensities
         median_image = np.median(image)
 
-        # Sigma equal 0.33 tends to give good results on most of the dataset
-        sigma = 0.33
-
         # Automatic canny edge detection using the computed median
-        auto_threshold1 = int(max(0, (1.0 - sigma) * median_image))
-        auto_threshold2 = int(min(255, (1.0 + sigma) * median_image))
+        auto_threshold1 = int(max(0, (1.0 - self.settings.ROTATE_SIGMA) * median_image))
+        auto_threshold2 = int(min(255, (1.0 + self.settings.ROTATE_SIGMA) * median_image))
 
         # Edge detector with canny
         #   where:
@@ -42,7 +44,7 @@ class Rotate(BaseClass):
             image=image,
             threshold1=auto_threshold1,
             threshold2=auto_threshold2,
-            apertureSize=3
+            apertureSize=self.settings.ROTATE_APERTURE_SIZE
         )
 
         # Progressive Probabilistic Hough Transform (cv2.HoughLinesP)
@@ -57,11 +59,11 @@ class Rotate(BaseClass):
         #                     single line.
         lines = cv2.HoughLinesP(
             image=img_edge,
-            rho=1,
+            rho=self.settings.ROTATE_HLP_RHO,
             theta=math.pi / 180,
-            threshold=100,
-            minLineLength=100,
-            maxLineGap=5
+            threshold=self.settings.ROTATE_HLP_THRESHOLD,
+            minLineLength=self.settings.ROTATE_HLP_MIN_LINE_LENGTH,
+            maxLineGap=self.settings.ROTATE_HLP_MAX_LINE_GAP
         )
 
         # Identify lines
