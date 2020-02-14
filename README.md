@@ -2,23 +2,21 @@
 _(Generate pdf file from multiple images)_
 
 Repositório com scripts para tratar imagens em determinada pasta, e transformá-las em um único arquivo com extensão pdf.
-
-_Scripted repository to process images in a given folder, and transform them into a single file with a pdf extension._
+ _Scripted repository to process images in a given folder, and transform them into a single file with a pdf extension._
 
 
 ## Configurações
 _(Setup)_
 
 Python versão 3.7.1
-
-_(Python version 3.7.1)_
+ _Python version 3.7.1_
 
 ### Instalar dependências
 _(Install dependencies)_
 
 Clone o repositório git e instale os requerimentos:
 
-_(Clone the git repository and install the requirements:)_
+_Clone the git repository and install the requirements:_
 
 ```
 git clone https://github.com/Lisliane/transform_images_into_single_pdf
@@ -32,16 +30,14 @@ pip install -r requeriments.txt
 _(Images to be transformed)_
 
 Acrescente as imagens que serão transformadas em PDF na pasta:
-
-_(Add the images to be converted to PDF in the folder:)_
+ _Add the images to be converted to PDF in the folder:_
 
 ```
 imgtopdf/in
 ```
 
 **Dica:**
-
-_(Tip:)_
+ _(Tip:)_
 
 Caso não sejam .PNG, mude o valor da variável EXTENSION_TO_EDIT em:
 
@@ -56,8 +52,7 @@ imgtopdf/utils/settings.py
 _(How to use)_
 
 Para executar:
-
-_(To execute:)_
+ _(To execute:)_
 
 ```
 cd imgtopdf/
